@@ -1,0 +1,209 @@
+@media screen and (max-width: 450px) {
+  body header nav {
+    position: relative;
+    justify-content: flex-end;
+  }
+  body header nav .navigation-wrapper {
+    display: none;
+  }
+  body header nav .burger .burger-img {
+    display: block;
+    padding: 10px;
+    float: right;
+    cursor: pointer;
+  }
+  body header nav .burger ul.navigation-wrapper {
+    display: flex;
+  }
+  body header nav .burger:hover ul.navigation-wrapper {
+    opacity: 1;
+  }
+}
+@media screen and (max-width: 576px) {
+  body header {
+    padding-top: 10px;
+  }
+  body header nav {
+    max-height: 50px;
+  }
+  body header nav .navigation-wrapper {
+    margin-left: 0;
+    justify-content: space-around;
+  }
+  body header nav .navigation-wrapper a {
+    padding: 3%;
+  }
+  body header .welcome-wrapper {
+    flex-direction: column;
+  }
+  body header .welcome-wrapper .welcome-text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 5% 2% 0;
+    text-align: center;
+  }
+  body header .welcome-wrapper .welcome-text-wrapper h1 {
+    font-size: 5vw;
+  }
+  body header .welcome-wrapper .welcome-text-wrapper p {
+    width: 100%;
+    line-height: normal;
+  }
+  body header .welcome-wrapper .welcome-text-wrapper button {
+    margin: 0 0 5% 0;
+  }
+  body header .welcome-wrapper .welcome-video-wrapper {
+    padding-bottom: 3%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  body header .welcome-wrapper .welcome-video-wrapper .video-wrapper {
+    left: 0;
+    width: 70%;
+  }
+  body header .welcome-wrapper .welcome-video-wrapper .video-wrapper video {
+    position: relative;
+  }
+  body main .offer-wrapper {
+    padding-left: 0;
+    flex-direction: column;
+  }
+  body main .offer-wrapper .offer-text-wrapper {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  body main .offer-wrapper .offer-text-wrapper h2, body main .offer-wrapper .offer-text-wrapper p {
+    text-align: center;
+  }
+  body main .offer-wrapper .offer-text-wrapper button {
+    margin: 0;
+  }
+  body main .offer-wrapper .offer-blocks-wrapper {
+    max-width: 100%;
+    padding-top: 4%;
+    justify-content: space-around;
+  }
+  body main .offer-wrapper .offer-blocks-wrapper .offer-block {
+    align-items: center;
+    margin: 1%;
+    padding: 2%;
+    max-width: 40%;
+    border: 2px solid #ff000094;
+    border-radius: 5px;
+  }
+  body main .offer-wrapper .offer-blocks-wrapper .offer-block img {
+    padding-bottom: 0;
+  }
+  body main .offer-wrapper .offer-blocks-wrapper .offer-block p {
+    text-align: center;
+  }
+  body main .products-wrapper {
+    padding: 3%;
+  }
+  body main .products-wrapper .text-block {
+    padding-left: 0;
+  }
+  body main .products-wrapper .text-block .line {
+    width: 30%;
+  }
+  body main .products-wrapper .products-blocks-wrapper .img-wrapper .product {
+    margin: 1px;
+    width: 178px;
+    height: 170px;
+  }
+  body main .team-information-wrapper {
+    padding: 0;
+  }
+  body main .team-information-wrapper .team-members-wrapper {
+    padding: 10px 0;
+  }
+  body main .team-information-wrapper .team-members-wrapper .profile-photo {
+    margin-top: 4%;
+  }
+  body main .team-information-wrapper .team-members-wrapper .profile-information {
+    padding: 0;
+    max-width: 60%;
+  }
+  body main .team-information-wrapper .team-members-wrapper .profile-information .information-text p, body main .team-information-wrapper .team-members-wrapper .profile-information .information-text .links-wrapper {
+    width: 100%;
+  }
+  body main .team-information-wrapper .team-members-wrapper .profile-information .information-text .links-wrapper {
+    width: 95%;
+    justify-content: space-around;
+  }
+  body main .team-information-wrapper .team-members-wrapper .profile-information .information-text .links-wrapper a {
+    padding-right: 0;
+    font-size: 14px;
+  }
+  body main .team-information-wrapper .team-members-wrapper .profile-information .information-text .another-members .img-wrapper {
+    height: 76px;
+  }
+  body footer .subscribe-wrapper {
+    padding: 2% 0;
+  }
+  body footer .subscribe-wrapper .text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  body footer .subscribe-wrapper .text-wrapper h2 {
+    font-size: 23px;
+  }
+  body footer .subscribe-wrapper .text-wrapper p {
+    width: 80%;
+  }
+  body footer .subscribe-wrapper .form-for-e-mail {
+    width: 80%;
+  }
+  body footer .subscribe-wrapper .form-for-e-mail button {
+    padding: 3% 5%;
+    font-size: 15px;
+  }
+  body footer .contact-info-wrapper {
+    padding: 0;
+  }
+  body footer .contact-info-wrapper .text-wrapper {
+    padding: 4% 5%;
+  }
+  body footer .contact-info-wrapper .text-wrapper h2 {
+    font-size: 1.5em;
+  }
+  body footer .contact-info-wrapper .text-wrapper p {
+    font-size: 15px;
+    line-height: normal;
+  }
+  body footer .contact-info-wrapper .text-wrapper .line {
+    width: 50%;
+  }
+  body footer .contact-info-wrapper .contact-flex-block {
+    margin-bottom: 0;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  body footer .contact-info-wrapper .contact-flex-block .form-for-contact {
+    width: 90%;
+    margin-bottom: 5%;
+  }
+  body footer .contact-info-wrapper .contact-flex-block .contact-info {
+    padding: 2% 5%;
+    position: relative;
+    width: 90%;
+    text-align: right;
+  }
+  body footer .contact-info-wrapper .contact-flex-block .contact-info p {
+    width: 100%;
+  }
+  body footer .contact-info-wrapper .contact-flex-block .contact-info h6, body footer .contact-info-wrapper .contact-flex-block .contact-info p {
+    padding: 1%;
+  }
+}
+
+/*# sourceMappingURL=mobile.css.map */

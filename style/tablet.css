@@ -1,0 +1,112 @@
+@media screen and (max-width: 768px) {
+  body header .welcome-wrapper .welcome-text-wrapper {
+    padding: 50px 3px;
+  }
+  body header .welcome-wrapper .welcome-text-wrapper h1 {
+    font-size: calc(3vw - 3px);
+    letter-spacing: 0px;
+  }
+  body header .welcome-wrapper .welcome-text-wrapper h1 .style-organaisation {
+    letter-spacing: 0px;
+  }
+  body header .welcome-wrapper .welcome-text-wrapper button {
+    font-size: 13px;
+  }
+  body header .welcome-wrapper .welcome-video-wrapper .video-wrapper {
+    top: 30%;
+  }
+  body main {
+    width: 95%;
+  }
+  body main .offer-wrapper .offer-text-wrapper button {
+    padding: 1% 7%;
+  }
+  body main .offer-wrapper .offer-blocks-wrapper .offer-block h3 {
+    font-size: 13px;
+  }
+  body main .offer-wrapper .offer-blocks-wrapper .offer-block p {
+    font-size: 12px;
+    line-height: 18px;
+  }
+  body main .products-wrapper {
+    padding: 40px 0 0 2px;
+  }
+  body main .products-wrapper .text-block p {
+    padding: calc(3% - 5px) 0;
+  }
+  body main .products-wrapper .products-blocks-wrapper .links-wrapper {
+    margin: 3% 5%;
+    display: flex;
+    justify-content: space-around;
+  }
+  body main .products-wrapper .products-blocks-wrapper .links-wrapper a {
+    padding-right: 0;
+  }
+  body main .products-wrapper .products-blocks-wrapper .img-wrapper .product {
+    width: 188px;
+    height: 180px;
+  }
+  body main .team-information-wrapper .text-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  body main .team-information-wrapper .text-block h2, body main .team-information-wrapper .text-block p {
+    text-align: center;
+    width: 80%;
+  }
+  body main .team-information-wrapper .team-members-wrapper .profile-photo {
+    height: 196px;
+  }
+  body main .team-information-wrapper .team-members-wrapper .profile-information .another-members .img-wrapper {
+    height: 125px;
+  }
+  body main .team-information-wrapper .team-members-wrapper .profile-information .another-members .img-wrapper .hidden {
+    padding: 3px 0px;
+    font-size: 13px;
+  }
+  body footer .subscribe-wrapper .text-wrapper h2 {
+    margin: 0 auto;
+    width: 90%;
+    font-size: 26px;
+  }
+  body footer .subscribe-wrapper .form-for-e-mail input {
+    padding: 20px 28px;
+    font-size: 13px;
+  }
+  body footer .contact-info-wrapper .text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  body footer .contact-info-wrapper .text-wrapper p {
+    width: 100%;
+    text-align: center;
+  }
+  body footer .contact-info-wrapper .contact-flex-block .form-for-contact .input-wrapper input {
+    padding: 4% 5%;
+    font-size: 13px;
+  }
+  body footer .contact-info-wrapper .contact-flex-block .form-for-contact textarea {
+    font-size: 13px;
+  }
+  body footer .contact-info-wrapper .contact-flex-block .form-for-contact button {
+    font-size: 13px;
+  }
+  body footer .contact-info-wrapper .contact-flex-block .contact-info {
+    padding: 4% 3%;
+    font-size: 13px;
+    width: 25%;
+  }
+  body footer .contact-info-wrapper .contact-flex-block .contact-info h6 {
+    font-size: 15px;
+  }
+  body footer .contact-info-wrapper .contact-flex-block .contact-info p.address {
+    line-height: 16px;
+  }
+  body footer .copyright-block .text-wrapper p {
+    font-size: 13px;
+  }
+}
+
+/*# sourceMappingURL=tablet.css.map */

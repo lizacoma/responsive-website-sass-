@@ -1,0 +1,17 @@
+{
+  "name": "third-week",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sass": "sass --watch sass:style",
+    "serve": "npx serve",
+    "start": "concurrently \"npm run sass\" \"npm run serve\""
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.1.0",
+    "serve": "^11.3.0"
+  }
+}
