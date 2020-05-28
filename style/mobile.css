@@ -15,7 +15,7 @@
   body header nav .burger ul.navigation-wrapper {
     display: flex;
   }
-  body header nav .burger:hover ul.navigation-wrapper {
+  body header nav .burger ul:hover ul.navigation-wrapper {
     opacity: 1;
   }
 }

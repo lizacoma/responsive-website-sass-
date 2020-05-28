@@ -45,6 +45,15 @@ $text-color-dark: #585858;
     flex-wrap: $flex-wrap;
 }
 
+@mixin hover-transition () {
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+}
+
+
 * {
     margin: 0;
     padding: 0;
@@ -56,6 +65,13 @@ body {
     
     background: $background-full;
     font-family: $basic-font;
+
+    p {
+        padding: calc(2% - 4px) 1%;
+        width: 100%;
+        line-height: 175%;
+        hyphens: manual;  
+    }
 }
 
 header {
@@ -73,7 +89,7 @@ header {
         background:$header-footer-color;
 
        .burger {
-           .burger-img  {
+           .burger-img {
            display: none;
        }
        
@@ -94,45 +110,37 @@ header {
         -webkit-transition: opacity 0.5s linear;
         -o-transition: opacity 0.5s linear;
         -moz-transition: opacity 0.5s linear;
-        
 
         li {
             display: flex;
             list-style-type: none;
 
             a {
+                @include links-style($text-color-light, 12px, 600);
                 margin: 5px 15px;
-                text-transform: uppercase;
-                font-size: 12px;
-                font-weight: 600;
-             
-                text-decoration: none;
-                white-space: nowrap;
             }
-        }
+         }
     }
-    }
-
+}
         .navigation-wrapper {   
             display: flex;
             flex-flow: row wrap;
             flex-wrap: nowrap;
-
             margin-left: -22px;
-           
             color: $text-color-light;
 
                     a { 
-                        @include links-style($text-color-light, 0.9em, 600);           
+                        @include links-style($text-color-light, 0.9em, 600);   
+                        @include hover-transition;        
                       
                         margin-right: 15px;
                         padding: 40px 4.7% 30px;
                         max-height: 23px;
-                    }
 
-                    a:hover {
-                        background: $link-hover-color;
-                    }
+                        &:hover {
+                            background: $link-hover-color;
+                        }
+                    }  
                 }
             }
 
@@ -141,7 +149,7 @@ header {
                 display: flex;
                 width: 80%;
                 
-                .welcome-text-wrapper {
+                .text-wrapper {
                     padding: 93px 3px 85px;
                     width: 50%;
                     font-family: 'Open Sans', sans-serif;
@@ -158,18 +166,20 @@ header {
                     p {
                         padding: 15px 3px;
                         width: 84%;
-                        line-height: 175%;
-                        
-                        hyphens: manual;
                         opacity: 0.6;
                     }
 
-                    button {
+                    .standard-button {
                         @include button-style(17px, 600, none);
+                        @include hover-transition;
                         margin: calc(5% + 8px) 2px;
                         padding: 2.4% 0;
                         width: 36.6%;
                         letter-spacing: 1.4px;   
+
+                        &:hover {
+                            color: black;
+                        }
                     }
                 }
 
@@ -207,11 +217,8 @@ header {
                         background: #C4C0B1;
                         z-index: 2; 
                     }
-
-                    
                 }
             }
-    
 }
 
 main {
@@ -224,7 +231,7 @@ main {
         padding: calc(7% + 6px) 0 5% 46px;
         color: $text-color-dark;
 
-        .offer-text-wrapper {
+        .text-wrapper {
             max-width: 48%;
 
             h2 {
@@ -237,16 +244,19 @@ main {
             p {
                 padding: 32px 0;
                 width: 83%;
-                line-height: 175%;
-                
-                hyphens: manual;
             }
 
             button {
                 @include button-style(19px, 600, none, white, $link-hover-color, 2px $link-hover-color solid);
+                @include hover-transition;
                 margin-top: calc(2.5% + 3px);
                 padding: calc(2% + 3px) calc(9% + 2px) calc(2% - 1px) 9%;
                 letter-spacing: 0.4px;
+
+                &:hover {
+                    color: white;
+                    background: $link-hover-color;
+                }
             }
         }
 
@@ -294,7 +304,6 @@ main {
                 }
 
                 p {
-                    hyphens: manual;
                     line-height: 28px;
                 }
             }
@@ -315,7 +324,7 @@ main {
 
         color: $text-color-dark;
 
-        .text-block {
+        .text-wrapper {
             @include flex-position(normal, center, column);
             padding-left: 30px;
          
@@ -326,11 +335,8 @@ main {
 
             p {
                 padding: calc(3% - 5px) 17%;
-
-                hyphens: manual;  
                 text-align: center;
-                line-height: 28px;
-                
+                line-height: 28px; 
             }
 
             .line {
@@ -349,13 +355,15 @@ main {
             
                 a {
                     @include links-style($text-color-dark, calc(1vw + 6px), 600); 
+                    @include hover-transition;
                     padding-right: 6%;
                     letter-spacing: 0.5px;   
-                }
 
-                a:hover {
-                    color: $link-hover-color;
+                    &:hover {
+                        color: $link-hover-color;
+                    }
                 }
+                
             }
 
             .img-wrapper {
@@ -379,15 +387,13 @@ main {
         padding: calc(9% - 6px) 0 0 calc(3% - 6px);
         color: $text-color-dark;
 
-        .text-block {
+        .text-wrapper {
             h2 {
                 @include h-style(2.6em, 700, 0.7px);
             }
 
             p {
-                padding: calc(2% - 4px) 1%;
                 line-height: 28px;
-                hyphens: manual;
                 width: 35%;
             }
 
@@ -423,7 +429,7 @@ main {
             padding: 5px 0;
             max-width: 75%;
 
-            .information-text {
+            .text-wrapper {
                 h5 {
                     @include h-style(calc(2em - 2px), 600, 0.4px);
                 }
@@ -440,13 +446,16 @@ main {
                 
                     a {
                         @include links-style($text-color-dark, 1.1em, 400, none);
+                        @include hover-transition;
                         padding-right: 8px;
                         font-style: italic;
                         letter-spacing: 1px; 
+
+                        &:hover {
+                            color: $link-hover-color;
+                        }
                     }
-                    a:hover {
-                        color: $link-hover-color;
-                    }
+                    
                 }
             }
 
@@ -475,6 +484,7 @@ main {
                     }
 
                     .hidden {
+                        @include hover-transition;
                         position: absolute;
                         bottom: 0;
 
@@ -491,11 +501,13 @@ main {
                         z-index: 2; 
                         
                     }
+
+                    &:hover .hidden {
+                        opacity: 0.5;
+                    }
                 }
 
-                .img-wrapper:hover .hidden {
-                    opacity: 0.5;
-                }
+                
             }
         }
     }}
@@ -510,6 +522,7 @@ footer {
         padding: calc(6% + 11px) 0 calc(5% + 4px);
         background: $img-color;
         color: $text-color-light;
+
         .text-wrapper { 
             text-align: center;
 
@@ -540,10 +553,15 @@ footer {
                 border-radius: 5px;
             }
 
-            button {
+            .standard-button {
                 @include button-style(calc(1vw + 3px), 700);
+                @include hover-transition;
                 margin-left: 22px;
                 padding: calc(3% + 4px) calc(7% + 1px);
+
+                &:hover {
+                    color: black;
+                }
             }
             
         }
@@ -565,7 +583,6 @@ footer {
             p {
                 padding: calc(3% - 3px) 3px;
                 line-height: 28px;
-                hyphens: manual;
                 width: 58%;
             }
 
@@ -614,11 +631,16 @@ footer {
                     border-radius: 10px;    
                 }
 
-                button {
+                .standard-button {
                     @include button-style(calc(1vw + 3px), 600);
+                    @include hover-transition;
                     margin: calc(5% - -2px) 0 0 2px;
                     padding: calc(3% + 0px) calc(7% + 3px) calc(3% + 2px) calc(7% + 7px);
                     width: 99%;
+
+                    &:hover {
+                        color: black;
+                    }
                 }
             }
          }
@@ -643,12 +665,14 @@ footer {
             p {
                 padding-bottom:5%;
                 width: 61%;  
+
+                &.address {
+                    line-height: 28px;
+                    padding-bottom: 4%;
+                }
             }
 
-           p.address {
-               line-height: 28px;
-               padding-bottom: 4%;
-           }
+           
 
         }  
     }

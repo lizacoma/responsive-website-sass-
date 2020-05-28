@@ -9,6 +9,12 @@ body {
   background: #FFFFFF;
   font-family: "Open Sans", sans-serif;
 }
+body p {
+  padding: calc(2% - 4px) 1%;
+  width: 100%;
+  line-height: 175%;
+  hyphens: manual;
+}
 
 header {
   margin: 0 auto;
@@ -48,12 +54,14 @@ header nav .burger ul.navigation-wrapper li {
   list-style-type: none;
 }
 header nav .burger ul.navigation-wrapper li a {
-  margin: 5px 15px;
-  text-transform: uppercase;
+  display: flex;
+  color: white;
   font-size: 12px;
   font-weight: 600;
+  text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
+  margin: 5px 15px;
 }
 header nav .navigation-wrapper {
   display: flex;
@@ -70,6 +78,11 @@ header nav .navigation-wrapper a {
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   margin-right: 15px;
   padding: 40px 4.7% 30px;
   max-height: 23px;
@@ -82,29 +95,27 @@ header .welcome-wrapper {
   display: flex;
   width: 80%;
 }
-header .welcome-wrapper .welcome-text-wrapper {
+header .welcome-wrapper .text-wrapper {
   padding: 93px 3px 85px;
   width: 50%;
   font-family: "Open Sans", sans-serif;
 }
-header .welcome-wrapper .welcome-text-wrapper h1 {
+header .welcome-wrapper .text-wrapper h1 {
   font-size: calc(4vw - 3px);
   font-weight: 800;
   letter-spacing: 1.5px;
   text-transform: uppercase;
   line-height: 122%;
 }
-header .welcome-wrapper .welcome-text-wrapper h1 .style-organaisation {
+header .welcome-wrapper .text-wrapper h1 .style-organaisation {
   letter-spacing: 6px;
 }
-header .welcome-wrapper .welcome-text-wrapper p {
+header .welcome-wrapper .text-wrapper p {
   padding: 15px 3px;
   width: 84%;
-  line-height: 175%;
-  hyphens: manual;
   opacity: 0.6;
 }
-header .welcome-wrapper .welcome-text-wrapper button {
+header .welcome-wrapper .text-wrapper .standard-button {
   background: #FF0000;
   color: white;
   font-size: 17px;
@@ -113,10 +124,18 @@ header .welcome-wrapper .welcome-text-wrapper button {
   font-weight: 600;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   margin: calc(5% + 8px) 2px;
   padding: 2.4% 0;
   width: 36.6%;
   letter-spacing: 1.4px;
+}
+header .welcome-wrapper .text-wrapper .standard-button:hover {
+  color: black;
 }
 header .welcome-wrapper .welcome-video-wrapper {
   position: relative;
@@ -155,10 +174,10 @@ main .offer-wrapper {
   padding: calc(7% + 6px) 0 5% 46px;
   color: #585858;
 }
-main .offer-wrapper .offer-text-wrapper {
+main .offer-wrapper .text-wrapper {
   max-width: 48%;
 }
-main .offer-wrapper .offer-text-wrapper h2 {
+main .offer-wrapper .text-wrapper h2 {
   font-size: calc(2vw + 10px);
   font-weight: 700;
   letter-spacing: 0.8px;
@@ -167,13 +186,11 @@ main .offer-wrapper .offer-text-wrapper h2 {
   width: 85%;
   line-height: 136%;
 }
-main .offer-wrapper .offer-text-wrapper p {
+main .offer-wrapper .text-wrapper p {
   padding: 32px 0;
   width: 83%;
-  line-height: 175%;
-  hyphens: manual;
 }
-main .offer-wrapper .offer-text-wrapper button {
+main .offer-wrapper .text-wrapper button {
   background: white;
   color: #FF0000;
   font-size: 19px;
@@ -182,9 +199,18 @@ main .offer-wrapper .offer-text-wrapper button {
   font-weight: 600;
   border: 2px #FF0000 solid;
   border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   margin-top: calc(2.5% + 3px);
   padding: calc(2% + 3px) calc(9% + 2px) calc(2% - 1px) 9%;
   letter-spacing: 0.4px;
+}
+main .offer-wrapper .text-wrapper button:hover {
+  color: white;
+  background: #FF0000;
 }
 main .offer-wrapper .offer-blocks-wrapper {
   display: flex;
@@ -231,7 +257,6 @@ main .offer-wrapper .offer-blocks-wrapper .offer-block h3 {
   font-weight: 600;
 }
 main .offer-wrapper .offer-blocks-wrapper .offer-block p {
-  hyphens: manual;
   line-height: 28px;
 }
 main hr {
@@ -250,7 +275,7 @@ main .products-wrapper {
   padding: 92px 0 0 2px;
   color: #585858;
 }
-main .products-wrapper .text-block {
+main .products-wrapper .text-wrapper {
   display: flex;
   justify-content: normal;
   align-items: center;
@@ -258,19 +283,18 @@ main .products-wrapper .text-block {
   flex-wrap: nowrap;
   padding-left: 30px;
 }
-main .products-wrapper .text-block h2 {
+main .products-wrapper .text-wrapper h2 {
   font-size: calc(2vw + 8px);
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
 }
-main .products-wrapper .text-block p {
+main .products-wrapper .text-wrapper p {
   padding: calc(3% - 5px) 17%;
-  hyphens: manual;
   text-align: center;
   line-height: 28px;
 }
-main .products-wrapper .text-block .line {
+main .products-wrapper .text-wrapper .line {
   margin: 5px 0;
   width: 17%;
   border-bottom: 2px solid #FF0000;
@@ -288,6 +312,11 @@ main .products-wrapper .products-blocks-wrapper .links-wrapper a {
   text-transform: uppercase;
   text-decoration: none;
   white-space: nowrap;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   padding-right: 6%;
   letter-spacing: 0.5px;
 }
@@ -314,19 +343,17 @@ main .team-information-wrapper {
   padding: calc(9% - 6px) 0 0 calc(3% - 6px);
   color: #585858;
 }
-main .team-information-wrapper .text-block h2 {
+main .team-information-wrapper .text-wrapper h2 {
   font-size: 2.6em;
   font-weight: 700;
   letter-spacing: 0.7px;
   text-transform: uppercase;
 }
-main .team-information-wrapper .text-block p {
-  padding: calc(2% - 4px) 1%;
+main .team-information-wrapper .text-wrapper p {
   line-height: 28px;
-  hyphens: manual;
   width: 35%;
 }
-main .team-information-wrapper .text-block .line {
+main .team-information-wrapper .text-wrapper .line {
   margin: 7px 14px;
   width: 130px;
   border-bottom: 2px solid #FF0000;
@@ -352,18 +379,18 @@ main .team-information-wrapper .team-members-wrapper .profile-information {
   padding: 5px 0;
   max-width: 75%;
 }
-main .team-information-wrapper .team-members-wrapper .profile-information .information-text h5 {
+main .team-information-wrapper .team-members-wrapper .profile-information .text-wrapper h5 {
   font-size: calc(2em - 2px);
   font-weight: 600;
   letter-spacing: 0.4px;
   text-transform: uppercase;
 }
-main .team-information-wrapper .team-members-wrapper .profile-information .information-text p {
+main .team-information-wrapper .team-members-wrapper .profile-information .text-wrapper p {
   padding: calc(3% - 7px) 3px;
   width: 75%;
   line-height: 28px;
 }
-main .team-information-wrapper .team-members-wrapper .profile-information .information-text .links-wrapper {
+main .team-information-wrapper .team-members-wrapper .profile-information .text-wrapper .links-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: normal;
@@ -372,7 +399,7 @@ main .team-information-wrapper .team-members-wrapper .profile-information .infor
   padding: 16px 4px;
   width: calc(42% + 3px);
 }
-main .team-information-wrapper .team-members-wrapper .profile-information .information-text .links-wrapper a {
+main .team-information-wrapper .team-members-wrapper .profile-information .text-wrapper .links-wrapper a {
   display: flex;
   color: #585858;
   font-size: 1.1em;
@@ -380,11 +407,16 @@ main .team-information-wrapper .team-members-wrapper .profile-information .infor
   text-transform: none;
   text-decoration: none;
   white-space: nowrap;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   padding-right: 8px;
   font-style: italic;
   letter-spacing: 1px;
 }
-main .team-information-wrapper .team-members-wrapper .profile-information .information-text .links-wrapper a:hover {
+main .team-information-wrapper .team-members-wrapper .profile-information .text-wrapper .links-wrapper a:hover {
   color: #FF0000;
 }
 main .team-information-wrapper .team-members-wrapper .profile-information .another-members {
@@ -409,6 +441,11 @@ main .team-information-wrapper .team-members-wrapper .profile-information .anoth
   z-index: 1;
 }
 main .team-information-wrapper .team-members-wrapper .profile-information .another-members .img-wrapper .hidden {
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   position: absolute;
   bottom: 0;
   padding: 4px 0px 9px 3px;
@@ -468,7 +505,7 @@ footer .subscribe-wrapper .form-for-e-mail input {
   border: none;
   border-radius: 5px;
 }
-footer .subscribe-wrapper .form-for-e-mail button {
+footer .subscribe-wrapper .form-for-e-mail .standard-button {
   background: #FF0000;
   color: white;
   font-size: calc(1vw + 3px);
@@ -477,8 +514,16 @@ footer .subscribe-wrapper .form-for-e-mail button {
   font-weight: 700;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   margin-left: 22px;
   padding: calc(3% + 4px) calc(7% + 1px);
+}
+footer .subscribe-wrapper .form-for-e-mail .standard-button:hover {
+  color: black;
 }
 footer .contact-info-wrapper {
   display: flex;
@@ -502,7 +547,6 @@ footer .contact-info-wrapper .text-wrapper h2 {
 footer .contact-info-wrapper .text-wrapper p {
   padding: calc(3% - 3px) 3px;
   line-height: 28px;
-  hyphens: manual;
   width: 58%;
 }
 footer .contact-info-wrapper .text-wrapper .line {
@@ -545,7 +589,7 @@ footer .contact-info-wrapper .contact-flex-block .form-for-contact textarea {
   border: none;
   border-radius: 10px;
 }
-footer .contact-info-wrapper .contact-flex-block .form-for-contact button {
+footer .contact-info-wrapper .contact-flex-block .form-for-contact .standard-button {
   background: #FF0000;
   color: white;
   font-size: calc(1vw + 3px);
@@ -554,9 +598,17 @@ footer .contact-info-wrapper .contact-flex-block .form-for-contact button {
   font-weight: 600;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
   margin: calc(5% - -2px) 0 0 2px;
   padding: calc(3% + 0px) calc(7% + 3px) calc(3% + 2px) calc(7% + 7px);
   width: 99%;
+}
+footer .contact-info-wrapper .contact-flex-block .form-for-contact .standard-button:hover {
+  color: black;
 }
 footer .contact-info-wrapper .contact-info {
   position: absolute;

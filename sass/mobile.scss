@@ -9,7 +9,6 @@ $header-footer-color: #313030;
 
 
 @media screen and (max-width:450px) {
-
     body header nav {
         position: relative;
         justify-content: flex-end;
@@ -28,7 +27,7 @@ $header-footer-color: #313030;
                     display: flex;
                 }
 
-                &:hover ul.navigation-wrapper{
+                ul:hover ul.navigation-wrapper{
                     opacity: 1;
                 }
             }
@@ -89,14 +88,12 @@ $header-footer-color: #313030;
                              video {
                                 position: relative;
                             }
-
                         }
                 }
            }
        } 
 
        main {
-
         .offer-wrapper {
             padding-left: 0;
             flex-direction: column;
