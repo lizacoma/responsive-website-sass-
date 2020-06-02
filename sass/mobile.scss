@@ -7,28 +7,41 @@ $header-footer-color: #313030;
     align-items: center;  
 }
 
-
 @media screen and (max-width:450px) {
     body header nav {
-        position: relative;
-        justify-content: flex-end;
-
-        .navigation-wrapper{
-            display: none;
-        }
-        .burger {
+            position: relative;
+            justify-content: flex-end;
+           
+            .burger {
                 .burger-img {
                     display: block;
                     padding: 10px;
                     float: right;
                     cursor: pointer;
-                }
-                ul.navigation-wrapper {
-                    display: flex;
+
+                    &:hover ~ ul.navigation-wrapper{
+                        opacity: 1;
+                    }
                 }
 
-                ul:hover ul.navigation-wrapper{
-                    opacity: 1;
+                ul.navigation-wrapper {
+                    position: absolute;
+                    flex-direction: column;
+                    background: $header-footer-color;
+    
+                    right: 9%;
+                    top: 10px;
+                    opacity: 0;
+                    border-radius: 5px;
+
+                    li {
+                        width: 100%;
+                        border-bottom: 1px solid white;
+                        a {
+                            font-size: 13px;
+                            margin: 5px 15px;
+                        }
+                    }
                 }
             }
         }
@@ -50,11 +63,11 @@ $header-footer-color: #313030;
                     padding: 3%;
                 }
             }
-           }
+        }
            .welcome-wrapper {
                flex-direction: column;
 
-               .welcome-text-wrapper {
+               .text-wrapper {
                    @include flex-mobile();
                    width: 100%;
                    padding: 5% 2% 0;
@@ -74,64 +87,39 @@ $header-footer-color: #313030;
                }
 
                .welcome-video-wrapper {
-                   padding-bottom: 3%;
+                    padding-bottom: 3%;
                     width: 100%;
                     
                     display: flex;        
                     align-items: center;
                     justify-content: center;
 
-                        .video-wrapper {
-                            left: 0;
-                            width: 70%;
+                    .video-wrapper {
+                        left: 0;
+                        width: 70%;
 
-                             video {
-                                position: relative;
-                            }
+                            video {
+                            position: relative;
                         }
+                    }
                 }
            }
        } 
 
        main {
         .offer-wrapper {
-            padding-left: 0;
+            padding: 5% 0;
             flex-direction: column;
 
-            .offer-text-wrapper {
-                max-width: 100%;
-                @include flex-mobile();
-
-                h2, p {
-                    text-align: center;
+            .text-wrapper {
+                h2 {
+                    font-size: 5vw;
                 }
+        
                 button {
                     margin: 0;
                 }
             }
-
-            .offer-blocks-wrapper {
-                max-width: 100%;
-                padding-top: 4%;
-                justify-content: space-around;
-
-                .offer-block {
-                    align-items: center;
-                    margin: 1%;
-                    padding: 2%;
-                    max-width: 40%;
-                    border: 2px solid $border-color;
-                    border-radius: 5px;
-
-                    img {
-                        padding-bottom: 0;
-                    }
-                    p {
-                        text-align: center;
-                    }
-                }
-            }
-
           
         }
         .products-wrapper {
@@ -148,14 +136,23 @@ $header-footer-color: #313030;
             .products-blocks-wrapper 
                 .img-wrapper   
                     .product {
-                        margin: 1px;
-                        width: 178px;
-                        height: 170px;
+                        margin: 3px;
                     }     
         }
 
         .team-information-wrapper {
             padding: 0;
+
+            .text-wrapper {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+
+                p {
+                    width: 100%;
+                }
+            }
 
             .team-members-wrapper {
                 padding: 10px 0;
@@ -168,27 +165,28 @@ $header-footer-color: #313030;
                     padding: 0;
                     max-width: 60%;
 
-                    .information-text {
+                    .text-wrapper {
                         p, .links-wrapper {
                             width: 100%;
                         }
 
                         .links-wrapper {
-                            width: 95%;
                             justify-content: space-around;
 
                             a {
                                 padding-right: 0; 
                                 font-size: 14px;
                             }
-                        }
-
-                        .another-members 
+                        } 
+                    }
+                    .another-members 
                             .img-wrapper {
                                 height: 76px;
+                                .hidden {
+                                    display: none;
+                                }
 
-                            }  
-                    }
+                            } 
                 }
             }
         }
@@ -238,18 +236,18 @@ $header-footer-color: #313030;
             }
 
             .contact-flex-block {
+                @include flex-mobile();
                 margin-bottom: 0;
                 padding-left: 0;
-                @include flex-mobile();
-
+                
                 .form-for-contact {
                     width: 90%;
                     margin-bottom: 5%;
                 }
 
                 .contact-info {
-                    padding: 2% 5%;
                     position: relative;
+                    padding: 2% 5%;
                     width: 90%;
                     text-align: right;
 

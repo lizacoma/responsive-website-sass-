@@ -6,11 +6,10 @@ $img-color: #F5F0DD;
 $text-color-light: white;
 $text-color-dark: #585858;
 
-@mixin h-style ($font-size, $font-weight, $letter-spacing, $text-transform: uppercase) {
+@mixin h-style ($font-size, $font-weight, $text-transform: uppercase) {
     font-size: $font-size;
     font-weight: $font-weight;
     
-    letter-spacing: $letter-spacing;
     text-transform: $text-transform; 
 }
 
@@ -25,14 +24,13 @@ $text-color-dark: #585858;
     white-space: nowrap;   
 }
 
-@mixin button-style ($font-size, $font-weight, $text-transform: uppercase, $background: $link-hover-color, $color: $text-color-light, $border: none) {
-  
+@mixin button-style ($text-transform: uppercase, $background: $link-hover-color, $color: $text-color-light, $border: none) {
     background: $background;
     color: $color;
-    font-size: $font-size;
+    font-size: 20px;
     font-family: $basic-font;
     text-transform: $text-transform;
-    font-weight: $font-weight;
+    font-weight: 600;
     border: $border;
     border-radius: 5px;   
 }
@@ -45,7 +43,7 @@ $text-color-dark: #585858;
     flex-wrap: $flex-wrap;
 }
 
-@mixin hover-transition () {
+@mixin hover-transition {
     cursor: pointer;
     -webkit-transition: all 0.3s ease;
     -moz-transition: all 0.3s ease;
@@ -67,10 +65,15 @@ body {
     font-family: $basic-font;
 
     p {
-        padding: calc(2% - 4px) 1%;
+        padding: 2% 1%;
         width: 100%;
-        line-height: 175%;
         hyphens: manual;  
+        line-height: 28px;
+    }
+
+    button {
+        @include hover-transition;
+        padding: 2% 9%;
     }
 }
 
@@ -81,161 +84,110 @@ header {
     background: #F6F2F2;
 
     nav {
-        @include flex-position(center, center);
         margin: 0 auto;
         max-width: 1250px;
-        max-height: 89px;
-        
         background:$header-footer-color;
 
-       .burger {
-           .burger-img {
-           display: none;
-       }
-       
-       ul.navigation-wrapper {
-        position: absolute;
-        display: none;
-        flex-direction: column;
-        background: $header-footer-color;
+        .burger {
 
-        opacity: 0;
-        right: 0%;
-        top: 83%;
-       
+            .burger-img {
+                    display: none;
+                }
+        
+            ul.navigation-wrapper {
+                @include flex-position(center, center);
+                @include hover-transition;  
+                color: $text-color-light;
+            
+                z-index: 500;
 
-        z-index: 500;
+                li {
+                    padding: 2%;
+                    list-style-type: none;
 
-        transition: opacity 0.5s linear;
-        -webkit-transition: opacity 0.5s linear;
-        -o-transition: opacity 0.5s linear;
-        -moz-transition: opacity 0.5s linear;
+                    a {
+                        @include links-style($text-color-light, 1em, 600);   
+                        @include hover-transition;           
+                    }
 
-        li {
-            display: flex;
-            list-style-type: none;
-
-            a {
-                @include links-style($text-color-light, 12px, 600);
-                margin: 5px 15px;
+                    &:hover {
+                        background: $link-hover-color;
+                    }
+                }
             }
-         }
+        }
     }
-}
-        .navigation-wrapper {   
-            display: flex;
-            flex-flow: row wrap;
-            flex-wrap: nowrap;
-            margin-left: -22px;
-            color: $text-color-light;
-
-                    a { 
-                        @include links-style($text-color-light, 0.9em, 600);   
-                        @include hover-transition;        
-                      
-                        margin-right: 15px;
-                        padding: 40px 4.7% 30px;
-                        max-height: 23px;
-
-                        &:hover {
-                            background: $link-hover-color;
-                        }
-                    }  
-                }
+    
+    .welcome-wrapper {
+        margin: 0 auto;
+        display: flex;
+        width: 80%;
+        
+        .text-wrapper {
+            padding: 90px 0;
+            width: 50%;
+            font-family: 'Open Sans', sans-serif;
+        
+            h1 {  
+                @include h-style(3vw, 800);
             }
 
-            .welcome-wrapper {
-                margin: 0 auto;
-                display: flex;
-                width: 80%;
-                
-                .text-wrapper {
-                    padding: 93px 3px 85px;
-                    width: 50%;
-                    font-family: 'Open Sans', sans-serif;
-                
-                    h1 {  
-                        @include h-style(calc(4vw - 3px), 800,  1.5px);
-                        line-height: 122%;
-                   
-                        .style-organaisation {
-                            letter-spacing: 6px;
-                        }
-                    }
+            p {
+                padding: 15px 0;
+                width: 85%;
+                opacity: 0.5;
+            }
 
-                    p {
-                        padding: 15px 3px;
-                        width: 84%;
-                        opacity: 0.6;
-                    }
+            .standard-button {
+                @include button-style(none);
+                @include hover-transition;
+                margin: 5% 0; 
 
-                    .standard-button {
-                        @include button-style(17px, 600, none);
-                        @include hover-transition;
-                        margin: calc(5% + 8px) 2px;
-                        padding: 2.4% 0;
-                        width: 36.6%;
-                        letter-spacing: 1.4px;   
-
-                        &:hover {
-                            color: black;
-                        }
-                    }
-                }
-
-                .welcome-video-wrapper {
-                    position: relative;
-                    width: 50%;
-                    
-                   
-                    .video-wrapper {
-                        position: relative;
-                        top: 18%;
-                        left: calc(11% + 3px);
-                        width: 88%; 
-                    }
-
-                    .shadow {
-                        position:absolute;
-                        padding-bottom: 64%;
-                        width: 100%;
-                        
-                        background: #C4C0B1;
-                       
-                        border-radius: 10px;
-                        box-shadow: -1px -17px 42px 8px rgba(0, 0, 0, 0.2);
-
-                        z-index: 1; 
-                    }
-
-                    video {
-                        position:absolute;
-
-                        padding-bottom: calc(13% + 7px);
-                        width:100%;
-                        
-                        background: #C4C0B1;
-                        z-index: 2; 
-                    }
+                &:hover {
+                    color: black;
                 }
             }
+        }
+
+        .welcome-video-wrapper {
+            position: relative;
+            width: 50%;
+            
+            .video-wrapper {
+                position: relative;
+                top: 18%;
+                left: 11%;
+                width: 88%;
+            }
+
+            video {
+                position:absolute;
+
+                padding-bottom: 13%;
+                width:100%;
+                
+                background: #C4C0B1;
+                z-index: 2; 
+                box-shadow: -1px -17px 42px 8px rgba(0, 0, 0, 0.2);
+            }
+        }
+    }
 }
 
 main {
     margin: 0 auto;
     max-width: 1579px;
-    width: 85%;
 
     .offer-wrapper {
         display: flex;
-        padding: calc(7% + 6px) 0 5% 46px;
+        padding: 5%;
         color: $text-color-dark;
-
+       
         .text-wrapper {
             max-width: 48%;
 
             h2 {
-                @include h-style(calc(2vw + 10px), 700, 0.8px);
+                @include h-style(2vw, 700);
                 margin-left: -2px;
                 width: 85%;
                 line-height: 136%;
@@ -247,11 +199,9 @@ main {
             }
 
             button {
-                @include button-style(19px, 600, none, white, $link-hover-color, 2px $link-hover-color solid);
-                @include hover-transition;
-                margin-top: calc(2.5% + 3px);
-                padding: calc(2% + 3px) calc(9% + 2px) calc(2% - 1px) 9%;
-                letter-spacing: 0.4px;
+                @include button-style(none, white, $link-hover-color, 2px $link-hover-color solid);
+                margin-top: 3%;
+                
 
                 &:hover {
                     color: white;
@@ -262,50 +212,23 @@ main {
 
         .offer-blocks-wrapper {   
             @include flex-position(normal, normal, row, wrap);
-            max-width: 51%;
+            max-width: 51%;  
            
             .offer-block {
-                @include flex-position(center, normal, column);
-                margin: 1% calc(1% - 2px) calc(7% - 9px) calc(2% + 6px);
+                margin: 2%;
                 max-width: 45%;
 
-                img.icon-1 {
-                    width: 40px;
-                    height: 42px;
+                i {
+                    color: $link-hover-color;
+                    font-size: 42px;
                 }
-
-                img.icon-2 {
-                    margin-top: -2px;
-
-                    width: 40px;
-                    height: 38px;
-                }
-
-                img.icon-3 {
-                    width: 42px;
-                    height: 34px;
-                }
-
-                img.icon-4 {
-                    width: 44px;
-                    height: 33px;
-                }
-
-                .icon-3, .icon-4 {
-                    margin-left: -3px;
-                    padding-bottom: calc(4% - 4px);
-                }
-
                 h3 {
-                    padding-top: 8%;
-                    padding-bottom: calc(2% + 3px);
-                    font-size: calc(2vw - 7px);
+                    padding: 7% 0;
+                    font-size: 2vw;
                     font-weight: 600;
                 }
 
-                p {
-                    line-height: 28px;
-                }
+                
             }
         }   
     }
@@ -319,8 +242,7 @@ main {
 
     .products-wrapper {
         @include flex-position(normal, center, column);
-        margin: 0 auto;
-        padding: 92px 0 0 2px;
+        padding: 4% 0;
 
         color: $text-color-dark;
 
@@ -330,11 +252,11 @@ main {
          
 
             h2 {
-                @include h-style(calc(2vw + 8px), 700, 2px);
+                @include h-style(2vw, 700);
             }
 
             p {
-                padding: calc(3% - 5px) 17%;
+                width: 90%;
                 text-align: center;
                 line-height: 28px; 
             }
@@ -349,15 +271,12 @@ main {
 
         .products-blocks-wrapper {
             .links-wrapper {
-                margin: calc(5% + 10px) 15% calc(4% - 2px) calc(18% + 5px);
-                display: flex;
-                flex-wrap: nowrap;
+                margin: 2% 20%;
+                @include flex-position(space-around, normal);
             
                 a {
-                    @include links-style($text-color-dark, calc(1vw + 6px), 600); 
+                    @include links-style($text-color-dark, 1vw, 600); 
                     @include hover-transition;
-                    padding-right: 6%;
-                    letter-spacing: 0.5px;   
 
                     &:hover {
                         color: $link-hover-color;
@@ -371,11 +290,10 @@ main {
 
                 .product {
                     margin: 10px;
-                    width: 298px;
-                    height: 290px;
-                    overflow: hidden;
 
                     img {
+                        width: 300px;
+                        height: 300px;
                         margin: 0 auto;
                     }
                 }
@@ -384,33 +302,33 @@ main {
     }
 
     .team-information-wrapper {
-        padding: calc(9% - 6px) 0 0 calc(3% - 6px);
+        padding: 4% 3%;
         color: $text-color-dark;
 
         .text-wrapper {
             h2 {
-                @include h-style(2.6em, 700, 0.7px);
+                @include h-style(2em, 700);
             }
 
             p {
-                line-height: 28px;
                 width: 35%;
+                padding: 2% 0;
             }
 
             .line {
-                margin: 7px 14px;
+                margin: 0 15px;
                 width: 130px;
                 border-bottom: 2px solid $link-hover-color;
             }
         }
         
         .team-members-wrapper {
-            padding: calc(5% - 2px) calc(1% - 2px) calc(5% - 7px);
+            padding: 3% 1%;
             display: flex;
 
         .profile-photo {
             position: relative;
-            margin-right: calc(6% - 7px);
+            margin-right: 6%;
             width: 336px;
 
             overflow: hidden;
@@ -431,21 +349,21 @@ main {
 
             .text-wrapper {
                 h5 {
-                    @include h-style(calc(2em - 2px), 600, 0.4px);
+                    @include h-style(2em, 600);
                 }
                 p {
-                    padding: calc(3% - 7px) 3px;
+                    padding: 3% 3px;
                     width: 75%;
                     line-height: 28px;
                 }
 
                 .links-wrapper {
                     @include flex-position(space-between, normal);
-                    padding: 16px 4px;
-                    width: calc(42% + 3px);
+                    padding: 16px 0;
+                    width: 50%;
                 
                     a {
-                        @include links-style($text-color-dark, 1.1em, 400, none);
+                        @include links-style($text-color-dark, 1em, 400, none);
                         @include hover-transition;
                         padding-right: 8px;
                         font-style: italic;
@@ -461,9 +379,8 @@ main {
 
             .another-members {
                 position: relative;
-                
                 display: flex;
-                padding: calc(5% + 2px) 3px;
+
                 width: 100%;
                 margin: 0 -10px;
 
@@ -476,8 +393,7 @@ main {
 
                     img {
                         position: absolute;
-                        
-                        padding-bottom: calc(13% + 7px);
+                        padding-bottom: 13%;
                         width: 100%;
                         background: $img-color;
                         z-index: 1;
@@ -498,8 +414,7 @@ main {
                         font-weight: 600;
                         text-transform: uppercase;
                         opacity: 0;
-                        z-index: 2; 
-                        
+                        z-index: 2;    
                     }
 
                     &:hover .hidden {
@@ -519,7 +434,7 @@ footer {
     .subscribe-wrapper {
         @include flex-position(normal, center, column);
 
-        padding: calc(6% + 11px) 0 calc(5% + 4px);
+        padding: 6% 0;
         background: $img-color;
         color: $text-color-light;
 
@@ -527,7 +442,6 @@ footer {
             text-align: center;
 
             h2 {
-                margin-left: -2px;
                 padding: 23px 0;
                 font-size: 40px;
                 letter-spacing: 2px;
@@ -535,29 +449,30 @@ footer {
 
             p {
                 padding: 4px 0;
+                font-size: 1em;
             }
         }
         
         .form-for-e-mail {
-            margin-left: calc(2% - 2px);
-            padding: calc(3% + 8px) 0;
+            padding: 3% 0;
         
             width: 50%;
-            @include flex-position(normal, center);
+            @include flex-position(normal, normal);
           
             input {
-                padding: 31px 91px 29px 36px;
+                padding: 0 6%;
                 width: 50%;
-                font-size: calc(1vw + 1px);
+               
+                font-size: 20px;
                 border: none;
                 border-radius: 5px;
             }
 
             .standard-button {
-                @include button-style(calc(1vw + 3px), 700);
+                @include button-style;
                 @include hover-transition;
                 margin-left: 22px;
-                padding: calc(3% + 4px) calc(7% + 1px);
+                padding: 3% 7%;
 
                 &:hover {
                     color: black;
@@ -573,22 +488,21 @@ footer {
         width: 100%;
 
         .text-wrapper {
-            padding: calc(6% - 2px) calc(10% + 5px) calc(4% - 1px);
+            padding: 3% 10%;
             color: $text-color-dark;
 
             h2 {
-                @include h-style(2.6em, 700, 0.7px);
+                @include h-style(2em, 700);
             }
 
             p {
-                padding: calc(3% - 3px) 3px;
-                line-height: 28px;
-                width: 58%;
+                padding: 3% 0;
+                width: 60%;
             }
 
             .line {
-                margin: 14px 1px;
-                width: 131px;
+                margin: 14px 0;
+                width: 130px;
                 border-bottom: 2px solid $link-hover-color;
             }
         }
@@ -597,7 +511,7 @@ footer {
             position: relative;
                 max-width: 100%;
                 margin-bottom: 7%;
-                padding-left: calc(10% + 5px);
+                padding-left: 10%;
 
             .form-for-contact {
                 width: 52%;
@@ -611,7 +525,7 @@ footer {
                         width: 39%;
                         
                         background: #E5E5E5;
-                        font-size: calc(1vw + 1px);
+                        font-size: 1em;
 
                         border: none;
                         border-radius: 10px;  
@@ -619,23 +533,23 @@ footer {
                 }
 
                 textarea {
-                    margin: calc(5% + 9px) 0 0 2px;
-                    padding: calc(3% - -3px) calc(3% + 5px);
+                    margin: 5% 0 0 2px;
+                    padding: 3% 3%;
                     width: 92%;
                    
                     color: $text-color-dark;
                     background: #E5E5E5;
-                    font-size: calc(1vw + 1px);
+                    font-size: 1vw;
 
                     border: none;
                     border-radius: 10px;    
                 }
 
                 .standard-button {
-                    @include button-style(calc(1vw + 3px), 600);
+                    @include button-style;
                     @include hover-transition;
-                    margin: calc(5% - -2px) 0 0 2px;
-                    padding: calc(3% + 0px) calc(7% + 3px) calc(3% + 2px) calc(7% + 7px);
+                    margin: 5% 0 0 2px;
+                    padding: 3% 7% 3% 7%;
                     width: 99%;
 
                     &:hover {
@@ -646,53 +560,57 @@ footer {
          }
          .contact-info {
             position: absolute;
-            bottom: 0;
+            top: 0;
             right: 0;
 
-            padding: 7% 0 calc(7% + 8px) calc(5% - -2px);
-            width: calc(31% + 6px);
+            padding: 7% 3%;
+            width: 27%;
 
             background: $header-footer-color;
             color: $text-color-light;
             font-size: 16px;
 
             h6 {
-                @include h-style(19px, -600, -0.3px);
-                margin-left: -2px;
-                padding: calc(6% - 1px) 0;
+                @include h-style(19px, 600);
             }
 
             p {
-                padding-bottom:5%;
-                width: 61%;  
-
-                &.address {
-                    line-height: 28px;
-                    padding-bottom: 4%;
-                }
+                padding-bottom: 5%;
+                width: 60%;  
             }
-
-           
 
         }  
     }
 
     .copyright-block {
         @include flex-position(space-between, normal);
-        padding: calc(3% + 5px) calc(11% - 8px);
+        padding: 3% 8%;
 
         background: $header-footer-color;
         color: $text-color-light;
 
         .social-wrapper {
-            margin-top: -6px;
-            display: flex;
-            flex-wrap: nowrap;
+            @include flex-position(space-around, normal, row, nowrap);
 
-            img {
-                padding-left: 9%;
+            .circle {
+                @include hover-transition;
+                position: relative;
+                margin: 5px;
                 width: 33px;
                 height: 33px;
+                background: $background-full;
+                border-radius: 50%;
+                    i {
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        color: $header-footer-color;
+                        font-size: 22px;
+                        transform: translate(-50%, -50%);  
+                    }
+                &:hover {
+                    background: $link-hover-color;
+                }
             }
         }
     }
